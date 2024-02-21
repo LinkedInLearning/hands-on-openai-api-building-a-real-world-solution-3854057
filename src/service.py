@@ -1,8 +1,9 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from datetime_utils import *
 from openai import OpenAI
 import os
 import time
+import logging
 
 TODAY = date.today()
 START_OF_WEEK, END_OF_WEEK = get_school_week_bounds(date.today())
@@ -13,9 +14,15 @@ client = OpenAI(api_key=key)
 
 app = FastAPI()
 
+logging.basicConfig(level=logging.INFO)
 
 @app.post("/message")
-async def read_message(message: str):
+async def read_message(request: Request, message: str):
+    conversation_id = request.headers.get("Openai-Conversation-Id")
+    if conversation_id:
+        logging.info(f"Openai-Conversation-Id: {conversation_id}")
+    else:
+        logging.info("Openai-Conversation-Id header not found.")
     if not message:
         return {"message": "No message received."}
 
