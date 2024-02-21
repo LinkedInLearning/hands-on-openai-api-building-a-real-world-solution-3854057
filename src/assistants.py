@@ -1,5 +1,6 @@
 import os
 import time
+import glob
 from openai import OpenAI
 
 MODEL = "gpt-3.5-turbo-1106"
@@ -13,6 +14,22 @@ assistant = client.beta.assistants.create(
     tools=[{"type":"retrieval"},{"type":"code_interpreter"}],
     model=MODEL
 )
+
+pattern = "*.json"
+json_files = glob.glob(pattern)
+
+for file_path in json_files:
+    print(f'Processing file: {file_path}')
+
+    transcript_file = client.files.create(
+        file=open(file_path, "rb"),
+        purpose="assistants"
+    )
+
+    client.beta.assistants.files.create(
+        assistant_id=assistant.id,
+        file_id=transcript_file.id
+    )
 
 thread = client.beta.threads.create()
 
