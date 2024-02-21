@@ -13,13 +13,19 @@ assistant = client.beta.assistants.create(
     model=MODEL
 )
 
+thread = client.beta.threads.create()
+
 def display_main_menu():
     print("\n[KinderLogger Assistant]")
     prompt=input("\nEnter your prompt: ")
     handle_main_menu_option(prompt)
 
 def handle_main_menu_option(prompt):
-    print(prompt)
+    client.beta.threads.messages.create(
+        thread.id,
+        role="user",
+        content=prompt
+    )
 
 while True:
     display_main_menu()
