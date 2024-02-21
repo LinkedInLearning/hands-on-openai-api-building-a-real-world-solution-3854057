@@ -21,6 +21,12 @@ for file_name in ogg_files:
         prompt="Miss Jime, Miss Naty"
     )
 
+    moderation_response = client.moderations.create(input=transcription)
+    if (moderation_response.results[0].flagged):
+        print("ALERT!")
+        print(transcription)
+        break
+
     completion = client.chat.completions.create(
         model="gpt-3.5-turbo-1106",
         messages=[
