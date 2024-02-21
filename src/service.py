@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, HTTPException
 from datetime_utils import *
 from openai import OpenAI
 import os
@@ -18,6 +18,10 @@ logging.basicConfig(level=logging.INFO)
 
 @app.post("/message")
 async def read_message(request: Request, message: str):
+    moderation_response = client.moderations.create(input=message)
+    if (moderation_response.results[0].flagged):
+        raise HTTPException(status_code=400, detail="Invalid prompt.")
+    
     conversation_id = request.headers.get("Openai-Conversation-Id")
     if conversation_id:
         logging.info(f"Openai-Conversation-Id: {conversation_id}")
