@@ -1,7 +1,7 @@
 # Hands-On OpenAI API: Building a Real-World Solution
 This is the repository for the LinkedIn Learning course `Hands-On OpenAI API: Building a Real-World Solution`. The full course is available from [LinkedIn Learning][lil-course-url].
 
-
+![lil-thumbnail-url]
 
 
 OpenAI stands at the forefront of AI, particularly when it comes to large language models (LLMs). If you’re a developer or business leader looking to leverage AI-powered tools, this course helps you to get up to speed with how to use OpenAI APIs to build solutions based on the retrieval-augmented generation (RAG) technique.
@@ -27,12 +27,15 @@ To resolve this issue:
     Add changes to git using this command: git add .
 	Commit changes using this command: git commit -m "some message"
 
-## Installing
-1. To use these exercise files, you must have the following installed:
-	- [list of requirements for course]
-2. Clone this repository into your local machine using the terminal (Mac), CMD (Windows), or a GUI tool like SourceTree.
-3. [Course-specific instructions]
+### Instructor
 
+Rodrigo Díaz Concha
+
+Solutions Architect, Microsoft Regional Director, and Microsoft MVP
+
+                            
+
+Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/rodrigo-diaz-concha?u=104).
 
 [0]: # (Replace these placeholder URLs with actual course URLs)
 
