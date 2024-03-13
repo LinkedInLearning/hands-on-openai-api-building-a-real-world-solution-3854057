@@ -1,6 +1,13 @@
 # Hands-On OpenAI API: Building a Real-World Solution
 This is the repository for the LinkedIn Learning course `Hands-On OpenAI API: Building a Real-World Solution`. The full course is available from [LinkedIn Learning][lil-course-url].
 
+
+
+
+OpenAI stands at the forefront of AI, particularly when it comes to large language models (LLMs). If you’re a developer or business leader looking to leverage AI-powered tools, this course helps you to get up to speed with how to use OpenAI APIs to build solutions based on the retrieval-augmented generation (RAG) technique.
+
+Join instructor Rodrigo Díaz Concha as he demonstrates a wide variety of solution-building options including using the Audio API to transcribe audio and the Chat Completions API to create documents. Test your new skills with a real-world project named KinderLogger by building an assistant using the Assistants API, implementing a retrieval-augmented generation (RAG) process in the assistant, and implementing a Web API using FastAPI to expose the assistant. Along the way, learn how to identify harmful content with the Moderations API, and create and use a GPT as a front end to invoke the service and test your KinderLogger project.
+
 _See the readme file in the main branch for updated instructions and information._
 ## Instructions
 This repository has branches for each of the videos in the course. You can use the branch pop up menu in github to switch to a specific branch and take a look at the course at that stage, or you can add `/tree/BRANCH_NAME` to the URL to go to the branch you want to access.
@@ -29,6 +36,6 @@ To resolve this issue:
 
 [0]: # (Replace these placeholder URLs with actual course URLs)
 
-[lil-course-url]: https://www.linkedin.com/learning/
-[lil-thumbnail-url]: http://
+[lil-course-url]: https://www.linkedin.com/learning/hands-on-openai-api-building-a-real-world-solution
+[lil-thumbnail-url]: https://media.licdn.com/dms/image/D4D0DAQH1trVwWKdtyA/learning-public-crop_675_1200/0/1709333885301?e=2147483647&v=beta&t=UPHlc47MYPZY8h0BRMYYMXZlNhfLAclrXKN53mHS5KQ
 
